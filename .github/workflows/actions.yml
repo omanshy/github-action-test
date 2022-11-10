@@ -10,6 +10,9 @@ jobs:
         run:  |
           pwd
           ls -lart
+          echo $GITHUB_SHA
+          echo $GITHUB_REPOSITORY
+          echo $GITHUB_WORKSPACE
       - name: Checkout the Repository
         uses: actions/checkout@v1
       - name: List all Files after checkout
