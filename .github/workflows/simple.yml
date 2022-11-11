@@ -1,9 +1,9 @@
 name: Shell Commands
 
 on: 
-  push:
+  pull_request:
     branches:
-      - develop
+      - master
 
 jobs:
   run-shell-command:
