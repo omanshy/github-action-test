@@ -1,11 +1,9 @@
 name: Shell Commands
 
 on: 
-  pull_request_target:
+  pull_request:
     branches:
       - master
-    types:
-      - openend
 
 jobs:
   run-shell-command:
