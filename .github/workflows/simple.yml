@@ -9,19 +9,6 @@ on:
       - master
 
 jobs:
-  run-python-code:
-    runs-on: ubuntu-latest
-    timeout-minutes: 4
-    steps:
-      - name: setup python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.9' # install the python version needed
-          
-      - name: execute py script # run main.py
-        env:
-          FROM: ${{ secrets.TEST1 }}
-        run: python python.py
   run-shell-command:
     runs-on: ubuntu-latest
     steps:
