@@ -23,7 +23,7 @@ jobs:
           
       - name: execute py script # run main.py
         env:
-          FROM: ${{ secrets.test1 }}
+          FROM: ${{ secrets.TEST1 }}
         run: python python.py
   run-shell-command:
     runs-on: ubuntu-latest
