@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - master
+#   pull_request_target:
+#     branches:
+#       - master
 
 jobs:
   run-shell-command:
@@ -18,18 +21,9 @@ jobs:
         run:  |
           node -v
           npm -v
-      - name: Python Command
+      - name: Fetch ENV Variable
         run:  |
-          import platform
-          print(platform.processor())
-        shell:  python
-      
-  run-windows-command:
-    runs-on:  windows-latest
-    needs: ['run-shell-command']
-    steps:
-      - name: Powershell directory
-        run:  Get-Location
-      - name: Directory Bash
-        run:  pwd
-        shell: bash
+          echo GITHUB_REF: $GITHUB_REF
+          echo GITHUB_REPOSITORY: $GITHUB_REPOSITORY
+          echo GITHUB_BASE_REF: $GITHUB_BASE_REF
+          echo GITHUB_HEAD_REF: $GITHUB_HEAD_REF
