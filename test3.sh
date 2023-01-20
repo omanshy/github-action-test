@@ -1,1 +1,1 @@
-echo "test3.sh"
+echo "test3.sh changed for testing"
