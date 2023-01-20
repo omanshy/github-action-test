@@ -3,6 +3,8 @@ on:
   push:
     branches:
       - develop
+env:
+  FILE_NAMES: "test1.sh test2.sh test3.sh test4.sh"
 
 jobs:
   build:
@@ -20,10 +22,13 @@ jobs:
 
       - name: List all changed files
         run: |
-          changed_files = "test1.sh test2.sh test3.sh test4.sh test5.sh"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
-            if exists_in_list changed-files $file
-              echo "File Exist"
-            fi
+            for item in $FILE_NAMES
+            do
+              if [ "$file" == "$item" ]; then
+                echo "File is in the list"
+                exit
+              fi
+            done
           done
