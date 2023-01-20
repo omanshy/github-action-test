@@ -20,6 +20,8 @@ jobs:
 
       - name: List all changed files
         run: |
+          changed_files = ()
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
+            changed_files1+=( $file )
           done
