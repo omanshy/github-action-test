@@ -20,8 +20,10 @@ jobs:
 
       - name: List all changed files
         run: |
-          changed_files = ()
+          changed_files = "test1.sh test2.sh test3.sh test4.sh test5.sh"
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
-            changed_files1+=( $file )
+            if exists_in_list changed-files $file
+              echo "File Exist"
+            fi
           done
