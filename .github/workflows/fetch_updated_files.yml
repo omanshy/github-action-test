@@ -25,7 +25,7 @@ jobs:
           CHANGED_FILES_IN_COMMIT=()
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
-            CHANGED_FILES_IN_COMMIT+=("$CHANGED_FILES_IN_COMMIT")
+            CHANGED_FILES_IN_COMMIT+=("$$file")
           done
           echo "Below mentioned is the changed files in commit"
           echo $CHANGED_FILES_IN_COMMIT
