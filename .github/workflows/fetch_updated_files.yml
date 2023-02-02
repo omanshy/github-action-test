@@ -36,6 +36,7 @@ jobs:
       - name: Inline Python Script
         run:  |
           import os
+          print(f"File name to check are {os.enviorn.get('FILE_NAMES')}")
           print("hello World")
           for item in range(0,5):
             print(item)
