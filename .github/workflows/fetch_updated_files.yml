@@ -33,6 +33,7 @@ jobs:
         run:  |
           import os
           print(f"File name to check are {os.environ.get('FILE_NAMES')}")
+          print(f"Changed Files in a commit are {os.environ.get('CHANGED_FILES_IN_COMMIT')}")
           print("hello World")
           for item in range(0,5):
             print(item)
