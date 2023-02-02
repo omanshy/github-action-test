@@ -33,3 +33,11 @@ jobs:
               fi
             done
           done
+      - name: Inline Python Script
+        run:  |
+          import os
+          print("hello World")
+          for item in range(0,5):
+            print(item)
+          print("Done")
+        shell: python
