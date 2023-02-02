@@ -22,17 +22,13 @@ jobs:
 
       - name: List all changed files
         run: |
+          CHANGED_FILES_IN_COMMIT=()
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "$file was changed"
-            for item in $FILE_NAMES
-            do
-              echo $item
-              if [ "$file" == *"$item" ]; then
-                echo "File is in the list"
-                exit
-              fi
-            done
+            CHANGED_FILES_IN_COMMIT+=("$CHANGED_FILES_IN_COMMIT")
           done
+          echo "Below mentioned is the changed files in commit"
+          echo $CHANGED_FILES_IN_COMMIT
       - name: Inline Python Script
         run:  |
           import os
