@@ -29,6 +29,7 @@ jobs:
           done
           echo "Below mentioned is the changed files in commit"
           echo $CHANGED_FILES_IN_COMMIT
+          echo "CHANGED_FILES_IN_COMMIT=$CHANGED_FILES_IN_COMMIT" >> $GITHUB_ENV
       - name: Inline Python Script
         run:  |
           import os
